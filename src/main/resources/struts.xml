@@ -5,19 +5,34 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="messages"/>
 
-    <include file="example.xml"/>
 
-    <package name="default" namespace="/" extends="struts-default">
+    <package name="actions" namespace="/actions" extends="struts-default">
 
-        <default-action-ref name="index"/>
+       <action name="DoSomething" class="actions.DoSomething">
+           <result name="success">/WEB-INF/vues/example5b/DoSomething.jsp</result>
+       </action>
 
-        <action name="index">
-            <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
-            </result>
+        <action name="DoSomethingElse" class="actions.DoSomethingElse">
+            <result name="success">/WEB-INF/vues/example5b/DoSomething.jsp</result>
         </action>
+
+        <action name="Saisie">
+            <result name="success">/WEB-INF/vues/example6/Saisie.jsp</result>
+        </action>
+
+        <action name="Confirmer" class="actions.Confirmer">
+            <result name="success">/WEB-INF/vues/example6/Confirmation.jsp</result>
+        </action>
+
+        <action name="Effacer" class="actions.Effacer">
+            <result name="success">/WEB-INF/vues/example6/Saisie.jsp</result>
+        </action>
+
+
+
+
 
     </package>
 
