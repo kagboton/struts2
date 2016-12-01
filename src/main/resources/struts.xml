@@ -7,14 +7,28 @@
     <constant name="struts.devMode" value="true"/>
     <constant name="struts.custom.i18n.resources" value="messages"/>
 
+    <include file="example7.xml"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index" />
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">Form</param>
+                <param name="namespace">/example7</param>
+            </result>
+        </action>
+        
+    </package>
+
 
     <package name="actions" namespace="/actions" extends="struts-default">
 
-       <action name="DoSomething" class="actions.DoSomething">
+       <action name="DoSomething" class="actions.example5b.DoSomething">
            <result name="success">/WEB-INF/vues/example5b/DoSomething.jsp</result>
        </action>
 
-        <action name="DoSomethingElse" class="actions.DoSomethingElse">
+        <action name="DoSomethingElse" class="actions.example5b.DoSomethingElse">
             <result name="success">/WEB-INF/vues/example5b/DoSomething.jsp</result>
         </action>
 
@@ -22,19 +36,13 @@
             <result name="success">/WEB-INF/vues/example6/Saisie.jsp</result>
         </action>
 
-        <action name="Confirmer" class="actions.Confirmer">
+        <action name="Confirmer" class="actions.example6.Confirmer">
             <result name="success">/WEB-INF/vues/example6/Confirmation.jsp</result>
         </action>
 
-        <action name="Effacer" class="actions.Effacer">
+        <action name="Effacer" class="actions.example6.Effacer">
             <result name="success">/WEB-INF/vues/example6/Saisie.jsp</result>
         </action>
 
-
-
-
-
     </package>
-
-    <!-- Add addition packages and configuration here. -->
 </struts>

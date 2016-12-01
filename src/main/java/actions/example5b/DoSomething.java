@@ -1,4 +1,4 @@
-package actions;
+package actions.example5b;
 
 import com.opensymphony.xwork2.ActionSupport;
 
