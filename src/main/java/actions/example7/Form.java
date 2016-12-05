@@ -36,6 +36,12 @@ public class Form extends ActionSupport {
         return getValue(checkboxlist);
     }
 
+
+    /**
+     * Méthode qui permet de recupérer tous les données selectionnées
+     * @param values
+     * @return result
+     */
     private String getValue(String[] values) {
         String result = "";
         for (String value : values){
